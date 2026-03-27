@@ -58,13 +58,7 @@ function LinkedInIcon() {
     </svg>
   );
 }
-function TwitterIcon() {
-  return (
-    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.849L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
+
 function EmailIcon() {
   return (
     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -262,7 +256,7 @@ export default function Team() {
               {/* avatar — overlaps band + content */}
               <div
                 className="relative z-10 w-20 h-20 rounded-full flex items-center justify-center text-3xl font-black text-white shadow-xl ring-4 translate-y-10 flex-shrink-0"
-                style={{ background: active.avatarColor, ringColor: `${active.avatarColor}30` }}
+                style={{ background: active.avatarColor }}
               >
                 {active.name[0]}
               </div>
@@ -294,14 +288,7 @@ export default function Team() {
                   <LinkedInIcon /> LinkedIn
                 </a>
               )}
-              {active.social.twitter && (
-                <a
-                  href={active.social.twitter}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 text-white text-xs font-semibold hover:bg-white/10 transition-all duration-200 cursor-pointer"
-                >
-                  <TwitterIcon /> X / Twitter
-                </a>
-              )}
+
               {active.social.email && (
                 <a
                   href={`mailto:${active.social.email}`}
