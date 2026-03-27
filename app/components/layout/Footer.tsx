@@ -180,7 +180,17 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
-          <p>&copy; 2024 ISDC. All rights reserved.</p>
+          <p>
+            &copy; 2024 ISDC. All rights reserved. &nbsp;Developed by{" "}
+            <a
+              href="https://fenebrisindia.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold hover:text-white transition-colors duration-200"
+            >
+              Fenebris India Pvt Ltd
+            </a>
+          </p>
           <p className="text-xs">ISO 9001 | ISO 14001 | OHSAS 45001 Certified</p>
         </div>
       </div>
