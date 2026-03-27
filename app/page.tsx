@@ -7,6 +7,7 @@ const About           = dynamic(() => import("@/app/components/sections/About"),
 const Services        = dynamic(() => import("@/app/components/sections/Services"),        { loading: () => <div className="h-[600px] bg-gray-50" /> });
 const WhyChooseUs     = dynamic(() => import("@/app/components/sections/WhyChooseUs"),     { loading: () => <div className="h-[600px] bg-white" /> });
 const ClientWork      = dynamic(() => import("@/app/components/sections/ClientWork"),      { loading: () => <div className="h-[600px]" style={{ background: "#080C18" }} /> });
+const PartnerLogos    = dynamic(() => import("@/app/components/sections/PartnerLogos"),    { loading: () => <div className="h-[260px] bg-white" /> });
 const Reviews         = dynamic(() => import("@/app/components/sections/Reviews"),         { loading: () => <div className="h-[500px] bg-white" /> });
 const MarqueeBanner   = dynamic(() => import("@/app/components/sections/MarqueeBanner"),   { loading: () => <div className="h-20" style={{ background: "#080C18" }} /> });
 const Team            = dynamic(() => import("@/app/components/sections/Team"),            { loading: () => <div className="h-[500px] bg-gray-50" /> });
@@ -19,6 +20,7 @@ export default function Home() {
     <>
       <Hero />
       <Stats />
+      <PartnerLogos />
       <About />
       <Services />
       <WhyChooseUs />
