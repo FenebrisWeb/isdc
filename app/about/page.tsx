@@ -8,7 +8,7 @@ const timeline = [
   {
     year: "2008",
     title: "ISDC Founded",
-    body: "Three like-minded industrial safety experts, each with over a decade of field experience, came together to form ISDC with five founding team members — driven by a shared mission to raise safety standards across Indian workplaces.",
+    body: "Three like-minded industrial safety experts, each with over a decade of field experience, came together to form ISDC with five founding team membersdriven by a shared mission to raise safety standards across Indian workplaces.",
     color: "#cc2128",
   },
   {
@@ -20,13 +20,13 @@ const timeline = [
   {
     year: "2015",
     title: "Expanding the Service Offering",
-    body: "ISDC added Occupational Health & Wellness training to its portfolio — addressing ergonomics, stress management, and behavioural safety alongside its core EHS programmes. Defensive Driving & Road Safety training was also introduced, responding to growing demand from fleet-intensive industries.",
+    body: "ISDC added Occupational Health & Wellness training to its portfolioaddressing ergonomics, stress management, and behavioural safety alongside its core EHS programmes. Defensive Driving & Road Safety training was also introduced, responding to growing demand from fleet-intensive industries.",
     color: "#fe5a0e",
   },
   {
     year: "Today",
     title: "India's Leading EHS Training Provider",
-    body: "With 80+ internal staff and certified trainers, 200+ regular clients, 150,000+ training sessions delivered, and offices in Delhi-NCR, Dhanbad, and Ahmedabad — ISDC is recognised as a one-stop solution for all EHS training requirements across corporate and government verticals.",
+    body: "With 80+ internal staff and certified trainers, 200+ regular clients, 150,000+ training sessions delivered, and offices in Delhi-NCR, Dhanbad, and AhmedabadISDC is recognised as a one-stop solution for all EHS training requirements across corporate and government verticals.",
     color: "#1a7a8a",
   },
 ];
@@ -41,7 +41,7 @@ const pillars = [
     ),
     color: "#cc2128",
     title: "Who We Are",
-    body: "A global leader in the field of environment, health & safety — established to combat the alarming increase of severe workplace accidents. ISDC was built on the belief that every worker deserves a safe environment, and every organisation deserves the expertise to provide one.",
+    body: "A global leader in the field of environment, health & safetyestablished to combat the alarming increase of severe workplace accidents. ISDC was built on the belief that every worker deserves a safe environment, and every organisation deserves the expertise to provide one.",
   },
   {
     icon: (
@@ -51,7 +51,7 @@ const pillars = [
     ),
     color: "#257e43",
     title: "Our Commitment",
-    body: "We have widened our EHS services across all corporate and industrial verticals to prevent hazardous accidents before they happen. Our programmes are designed to real international standards — ISO 9001, ISO 14001, and OHSAS 45001 — delivered by certified professionals with genuine field experience.",
+    body: "We have widened our EHS services across all corporate and industrial verticals to prevent hazardous accidents before they happen. Our programmes are designed to real international standardsISO 9001, ISO 14001, and OHSAS 45001delivered by certified professionals with genuine field experience.",
   },
   {
     icon: (
@@ -61,7 +61,7 @@ const pillars = [
     ),
     color: "#fe5a0e",
     title: "Our Process",
-    body: "ISDC provides learning solutions in EHS, soft skills, and high-end technology training. Our certified trainers — trained by international pro-trainers — deliver programmes on-site at client facilities or at our own training centres, tailored to the specific hazards and regulatory needs of each organisation.",
+    body: "ISDC provides learning solutions in EHS, soft skills, and high-end technology training. Our certified trainerstrained by international pro-trainersdeliver programmes on-site at client facilities or at our own training centres, tailored to the specific hazards and regulatory needs of each organisation.",
   },
 ];
 
@@ -76,43 +76,94 @@ const numbers = [
 export default function AboutPage() {
   return (
     <>
-      {/* ── HERO ── */}
-      <section
-        className="relative pt-32 pb-24 overflow-hidden"
-        style={{ background: "#080C18" }}
-      >
-        {/* texture */}
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ backgroundImage: "repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 56px)" }} />
-        {/* blobs */}
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(204,33,40,0.08) 0%, transparent 60%)", transform: "translate(-30%,-30%)" }} />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(37,126,67,0.07) 0%, transparent 60%)", transform: "translate(30%,30%)" }} />
+      {/* ── HERO ── same visual DNA as homepage Hero.tsx ── */}
+      <section className="relative w-full overflow-hidden bg-dark" style={{ height: "clamp(520px, 70vh, 750px)" }}>
 
-        <div className="relative max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
-          <AnimateOnScroll animation="fadeUp">
-            <div className="flex items-center gap-3 mb-5">
-              <span className="h-px w-10 bg-primary" />
-              <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">About ISDC</span>
+        {/* background image */}
+        <Image
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+          alt="ISDC About Us"
+          fill
+          className="object-cover scale-[1.04]"
+          priority
+        />
+
+        {/* overlays */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(110deg, rgba(10,10,20,0.95) 30%, rgba(10,10,20,0.75) 60%, rgba(10,10,20,0.35) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,20,0.7) 0%, transparent 40%)" }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(700px circle at 30% 50%, rgba(204,33,40,0.10) 0%, transparent 65%)" }} />
+
+        {/* floating shapes */}
+        {[
+          { size: 480, left: "78%", top: "-8%",  opacity: 0.055, ring: true  },
+          { size: 260, left: "88%", top: "55%",  opacity: 0.04,  ring: true  },
+          { size: 160, left: "6%",  top: "12%",  opacity: 0.06,  ring: false },
+          { size: 90,  left: "58%", top: "82%",  opacity: 0.09,  ring: false },
+          { size: 320, left: "18%", top: "72%",  opacity: 0.035, ring: true  },
+        ].map((s, i) => (
+          <div key={i} className="absolute pointer-events-none" style={{ left: s.left, top: s.top, width: s.size, height: s.size, marginLeft: -(s.size / 2), marginTop: -(s.size / 2), opacity: s.opacity }}>
+            {s.ring
+              ? <div className="w-full h-full rounded-full border border-white hero-spin-slow" />
+              : <div className="relative w-full h-full flex items-center justify-center"><div className="absolute w-full h-full rounded-full bg-primary/30 hero-ring-pulse" /><div className="w-1/3 h-1/3 rounded-full bg-white/60" /></div>
+            }
+          </div>
+        ))}
+
+        {/* corner brackets */}
+        <div className="absolute top-8 left-8 w-10 h-10 border-t-2 border-l-2 border-primary/60 pointer-events-none" />
+        <div className="absolute bottom-20 right-8 w-10 h-10 border-b-2 border-r-2 border-primary/60 pointer-events-none" />
+
+        {/* content */}
+        <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col justify-center">
+          <div className="max-w-3xl">
+
+            {/* breadcrumb */}
+            <div className="hero-animate-badge flex items-center gap-2 text-xs text-white/40 font-medium mb-5">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <span>/</span>
+              <span className="text-white/70">About Us</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black text-white leading-[1.06] tracking-tight max-w-3xl">
-              Educate, Prepare &amp; <span className="text-primary">Prevent</span>
+
+            {/* eyebrow */}
+            <div className="hero-animate-badge flex items-center gap-3 mb-5">
+              <span className="h-px w-10 bg-primary" />
+              <span className="text-primary text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">About ISDC</span>
+              <span className="h-px w-4 bg-primary/40" />
+            </div>
+
+            {/* heading */}
+            <h1 className="hero-animate-title text-4xl sm:text-5xl lg:text-[3.6rem] font-black text-white leading-[1.08] tracking-tight mb-6">
+              Educate, Prepare &amp;{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-primary">Prevent</span>
+                <span className="absolute bottom-0 left-0 h-[3px] w-full bg-primary rounded-full" style={{ animation: "fadeInLeft 0.6s ease 0.5s both" }} />
+              </span>
             </h1>
-            <p className="text-white text-base sm:text-lg mt-6 max-w-2xl leading-relaxed">
-              Industrial Safety Development Council — established in 2008 to impart safety training among workers and staff exposed to occupational hazards. We are committed to saving human lives, protecting the environment, and aiding the national economy through world-class EHS education.
+
+            {/* subtitle */}
+            <p className="hero-animate-sub text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mb-10">
+              Established in 2008 with a prime aim to make every workplace safe. ISO 9001, ISO 14001 &amp; OHSAS 45001 certified, trusted by 200+ organisations across India.
             </p>
 
-            {/* key numbers strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px mt-14 bg-white/[0.06] rounded-2xl overflow-hidden">
-              {numbers.map((n) => (
-                <div key={n.label} className="bg-[#080C18] px-6 py-6 text-center">
-                  <p className="text-white font-black text-3xl sm:text-4xl tracking-tight">{n.value}</p>
-                  <p className="text-white text-xs mt-1 uppercase tracking-widest">{n.label}</p>
+            {/* stat strip */}
+            <div className="hero-animate-stat flex flex-wrap items-center gap-6">
+              {numbers.map((n, i) => (
+                <div key={n.label} className="flex items-center gap-6">
+                  <div>
+                    <p className="text-2xl sm:text-3xl font-black text-white leading-none">{n.value}</p>
+                    <p className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">{n.label}</p>
+                  </div>
+                  {i < numbers.length - 1 && <div className="hidden sm:block w-px h-8 bg-white/10" />}
                 </div>
               ))}
             </div>
-          </AnimateOnScroll>
+
+          </div>
+        </div>
+
+        {/* bottom accent bar */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/8">
+          <div className="h-full w-1/3 bg-primary" />
         </div>
       </section>
 
@@ -164,13 +215,13 @@ export default function AboutPage() {
               Changing the Landscape of <span className="text-primary">Safety</span>
             </h2>
             <p className="text-white text-sm mt-4 max-w-2xl leading-relaxed">
-              Industrial Safety Development Council began its venture in 2008 — three like-minded safety experts with a shared goal of making a real difference in workplace safety across India and beyond.
+              Industrial Safety Development Council began its venture in 2008three like-minded safety experts with a shared goal of making a real difference in workplace safety across India and beyond.
             </p>
           </AnimateOnScroll>
 
           {/* timeline */}
           <div className="relative">
-            {/* vertical line — desktop */}
+            {/* vertical linedesktop */}
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-px" />
 
             <div className="flex flex-col gap-12 lg:gap-0">
@@ -180,12 +231,12 @@ export default function AboutPage() {
                   <AnimateOnScroll key={i} animation={isLeft ? "fadeRight" : "fadeLeft"} delay={i * 80}>
                     <div className={`relative lg:grid lg:grid-cols-2 lg:gap-16 items-center ${i > 0 ? "lg:-mt-4" : ""}`}>
 
-                      {/* year dot — desktop */}
+                      {/* year dotdesktop */}
                       <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                         <div className="w-4 h-4 rounded-full ring-4 ring-[#080C18]" style={{ background: item.color }} />
                       </div>
 
-                      {/* content — alternates left/right */}
+                      {/* contentalternates left/right */}
                       <div className={`${isLeft ? "lg:text-right lg:pr-8" : "lg:col-start-2 lg:pl-8"} lg:py-10`}>
                         <div className={`inline-flex items-center gap-2 mb-3 ${isLeft ? "lg:flex-row-reverse" : ""}`}>
                           <span
@@ -224,13 +275,13 @@ export default function AboutPage() {
                 We Are in Business to <span className="text-primary">Save Human Lives</span>
               </h2>
               <p className="text-dark text-sm leading-relaxed mb-4">
-                ISDC was founded with a prime aim — to impart safety training among workers and staff exposed to unchecked occupational hazards and the risk of fatal accidents. Our goal also includes training safety professionals, equipping them with the skills and knowledge to act with confidence and competence in responding to accidents.
+                ISDC was founded with a prime aimto impart safety training among workers and staff exposed to unchecked occupational hazards and the risk of fatal accidents. Our goal also includes training safety professionals, equipping them with the skills and knowledge to act with confidence and competence in responding to accidents.
               </p>
               <p className="text-dark text-sm leading-relaxed mb-4">
-                As our motto says <span className="font-bold text-primary">"Educate, Prepare &amp; Prevent"</span> — we believe that every accident is preventable, and that the right training at the right time can be the difference between life and death.
+                As our motto says <span className="font-bold text-primary">"Educate, Prepare &amp; Prevent"</span>we believe that every accident is preventable, and that the right training at the right time can be the difference between life and death.
               </p>
               <p className="text-dark text-sm leading-relaxed mb-8">
-                Committed to delivering skill development and all-round excellence in safety, we are working to reduce unwanted incidents and serve a noble cause — helping our environment and aiding the national economy, one training programme at a time.
+                Committed to delivering skill development and all-round excellence in safety, we are working to reduce unwanted incidents and serve a noble causehelping our environment and aiding the national economy, one training programme at a time.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
@@ -243,7 +294,7 @@ export default function AboutPage() {
                   </svg>
                 </Link>
                 <Link
-                  href="/services"
+                  href="/complete-EHS-services-Package"
                   className="inline-flex items-center gap-2 border border-gray-200 text-dark text-sm font-bold px-6 py-3 rounded-full hover:border-primary hover:text-primary transition-colors"
                 >
                   Our Services

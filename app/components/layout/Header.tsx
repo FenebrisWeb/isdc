@@ -14,6 +14,7 @@ const navLinks = [
 ];
 
 const serviceLinks = [
+  { label: "Complete EHS Services & Package", href: "/complete-EHS-services-Package", highlight: true },
   { label: "Tower Climbing & Work at Height", href: "/services/height-safety" },
   { label: "Fire Safety Training", href: "/services/fire-safety" },
   { label: "First Aid Training", href: "/services/first-aid" },
@@ -100,7 +101,7 @@ export default function Header() {
 
               {/* Services dropdown */}
               <div className="relative group">
-                <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded">
+                <Link href="/complete-EHS-services-Package" className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition-colors rounded">
                   Services
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -114,14 +115,14 @@ export default function Header() {
                       clipRule="evenodd"
                     />
                   </svg>
-                </button>
+                </Link>
                 <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   <div className="py-2">
                     {serviceLinks.map((s) => (
                       <Link
                         key={s.href}
                         href={s.href}
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                        className={`block px-4 py-2.5 text-sm transition-colors ${s.highlight ? "font-bold text-primary hover:bg-primary/5 border-b border-gray-100 mb-1" : "text-gray-700 hover:bg-gray-50 hover:text-primary"}`}
                       >
                         {s.label}
                       </Link>
@@ -245,7 +246,7 @@ export default function Header() {
                       <Link
                         key={s.href}
                         href={s.href}
-                        className="block px-3 py-2 text-sm text-dark hover:text-primary hover:bg-gray-50 rounded transition-colors"
+                        className={`block px-3 py-2 text-sm rounded transition-colors ${s.highlight ? "font-bold text-primary hover:bg-primary/5" : "text-dark hover:text-primary hover:bg-gray-50"}`}
                         onClick={() => setMobileOpen(false)}
                       >
                         {s.label}

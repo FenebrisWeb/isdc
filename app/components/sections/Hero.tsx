@@ -13,7 +13,7 @@ const slides = [
     highlight: "Safety Training",
     subtitle:
       "Empowering 10,000+ professionals with world-class EHS training since 2008. ISO 9001, ISO 14001 & OHSAS 45001 certified.",
-    primaryCta: { label: "Explore Services", href: "/services" },
+    primaryCta: { label: "Explore Services", href: "/complete-EHS-services-Package" },
     secondaryCta: { label: "Get a Quote", href: "/contact" },
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
@@ -41,7 +41,7 @@ const slides = [
     highlight: "First Aid",
     subtitle:
       "From ergonomics to emergency preparedness — complete occupational health solutions for a safer, healthier workplace.",
-    primaryCta: { label: "Our Services", href: "/services" },
+    primaryCta: { label: "Our Services", href: "/complete-EHS-services-Package" },
     secondaryCta: { label: "Book Training", href: "/contact" },
     image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",

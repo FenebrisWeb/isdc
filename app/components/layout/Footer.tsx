@@ -79,7 +79,7 @@ export default function Footer() {
                 {[
                   { label: "Home", href: "/" },
                   { label: "About Us", href: "/about" },
-                  { label: "Services", href: "/services" },
+                  { label: "Services", href: "/complete-EHS-services-Package" },
                   { label: "Blog", href: "/blog" },
                   { label: "Gallery", href: "/gallery" },
                   { label: "Contact Us", href: "/contact" },

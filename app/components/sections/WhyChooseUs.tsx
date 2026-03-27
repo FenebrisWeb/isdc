@@ -138,7 +138,7 @@ export default function WhyChooseUs() {
                 <p className="text-white text-sm mt-2 leading-relaxed">
                   Protect your workforce with expert-led EHS programs designed to international standards.
                 </p>
-                <Link href="/services" className="inline-flex items-center gap-1.5 text-accent text-xs font-bold uppercase tracking-widest mt-4 hover:gap-3 transition-all">
+                <Link href="/complete-EHS-services-Package" className="inline-flex items-center gap-1.5 text-accent text-xs font-bold uppercase tracking-widest mt-4 hover:gap-3 transition-all">
                   Explore Services
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
