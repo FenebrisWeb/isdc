@@ -250,10 +250,10 @@ export default function DashboardView({
 
       {/* ── Header ──────────────────────────────────────────────────────────── */}
       <div style={{ background: "#080C18" }} className="border-b border-white/[0.07]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center gap-3 flex-wrap">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-3">
 
           {/* Brand */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2.5 flex-shrink-0">
             <div className="w-7 h-7 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
               <svg className="w-3.5 h-3.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
@@ -261,21 +261,20 @@ export default function DashboardView({
             </div>
             <div>
               <p className="text-white font-black text-xs tracking-tight leading-none">ISDC Dashboard</p>
-              <p className="text-white/30 text-[10px] mt-0.5">Form Submissions</p>
+              <p className="text-white/30 text-[10px] mt-0.5 hidden sm:block">Form Submissions</p>
             </div>
           </div>
 
-          <div className="h-5 w-px bg-white/10 hidden sm:block" />
+          {/* Right side: form selector + actions — always on same row */}
+          <div className="flex items-center gap-2 min-w-0">
 
-          {/* Form Selector */}
-          <div className="flex items-center gap-2">
-            <span className="text-white/30 text-[10px] font-bold uppercase tracking-widest hidden sm:block">Form</span>
-            <div className="relative">
+            {/* Form Selector */}
+            <div className="relative min-w-0">
               <select
                 value={selectedId}
                 onChange={(e) => handleFormChange(e.target.value)}
                 disabled={fetching}
-                className="appearance-none bg-white/[0.07] border border-white/[0.12] text-white text-xs font-semibold rounded-lg pl-3 pr-8 py-1.5 focus:outline-none focus:border-primary/60 transition-colors cursor-pointer disabled:opacity-50"
+                className="appearance-none bg-white/[0.07] border border-white/[0.12] text-white text-xs font-semibold rounded-lg pl-3 pr-7 py-1.5 focus:outline-none focus:border-primary/60 transition-colors cursor-pointer disabled:opacity-50 max-w-[160px] sm:max-w-none truncate"
               >
                 {forms.map((f) => (
                   <option key={f.id} value={f.id} style={{ background: "#1a1a2e" }}>
@@ -283,48 +282,50 @@ export default function DashboardView({
                   </option>
                 ))}
               </select>
-              <svg className="absolute right-2.5 top-1/2 -translate-y-1/2 w-3 h-3 text-white/40 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 text-white/40 pointer-events-none flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
               </svg>
             </div>
+
+            <div className="h-5 w-px bg-white/10 flex-shrink-0" />
+
+            {/* Refresh */}
+            <button
+              onClick={() => fetchRows(selectedId)}
+              disabled={fetching}
+              title="Refresh data"
+              className="flex items-center gap-1.5 text-white/40 hover:text-white text-xs font-semibold transition-colors disabled:opacity-30 flex-shrink-0"
+            >
+              <svg className={`w-4 h-4 ${fetching ? "animate-spin" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>
+              <span className="hidden sm:inline">{fetching ? "Loading…" : "Refresh"}</span>
+            </button>
+
+            <div className="h-5 w-px bg-white/10 flex-shrink-0" />
+
+            {/* Logout */}
+            <button
+              onClick={handleLogout}
+              disabled={loggingOut}
+              title="Logout"
+              className="flex items-center gap-1.5 text-white/40 hover:text-white text-xs font-semibold transition-colors disabled:opacity-50 flex-shrink-0"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+              </svg>
+              <span className="hidden sm:inline">{loggingOut ? "Logging out…" : "Logout"}</span>
+            </button>
+
           </div>
-
-          <div className="flex-1" />
-
-          {/* Refresh */}
-          <button
-            onClick={() => fetchRows(selectedId)}
-            disabled={fetching}
-            title="Refresh data"
-            className="flex items-center gap-1.5 text-white/40 hover:text-white text-xs font-semibold transition-colors disabled:opacity-30"
-          >
-            <svg className={`w-3.5 h-3.5 ${fetching ? "animate-spin" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-            </svg>
-            <span className="hidden sm:inline">{fetching ? "Loading…" : "Refresh"}</span>
-          </button>
-
-          <div className="h-5 w-px bg-white/10" />
-
-          {/* Logout */}
-          <button
-            onClick={handleLogout}
-            disabled={loggingOut}
-            className="flex items-center gap-1.5 text-white/40 hover:text-white text-xs font-semibold transition-colors disabled:opacity-50"
-          >
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
-            </svg>
-            <span className="hidden sm:inline">{loggingOut ? "Logging out…" : "Logout"}</span>
-          </button>
 
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-4 sm:space-y-6">
 
         {/* ── Stats (3 cards) ────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4">
           {[
             {
               label: "Total Submissions", value: submissions.length,
@@ -342,14 +343,14 @@ export default function DashboardView({
               icon: <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />,
             },
           ].map((stat) => (
-            <div key={stat.label} className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1.5">{stat.label}</p>
-                  <p className="text-3xl font-black leading-none" style={{ color: stat.color }}>{stat.value}</p>
+            <div key={stat.label} className="bg-white rounded-2xl border border-gray-100 p-3 sm:p-5 shadow-sm">
+              <div className="flex items-start justify-between gap-1.5 sm:gap-3">
+                <div className="min-w-0">
+                  <p className="text-[8px] sm:text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1 leading-tight">{stat.label}</p>
+                  <p className="text-xl sm:text-3xl font-black leading-none" style={{ color: stat.color }}>{stat.value}</p>
                 </div>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: stat.bg }}>
-                  <svg className="w-5 h-5" style={{ color: stat.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: stat.bg }}>
+                  <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5" style={{ color: stat.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     {stat.icon}
                   </svg>
                 </div>
@@ -362,27 +363,27 @@ export default function DashboardView({
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
 
           {/* Card header */}
-          <div className="px-6 py-4 border-b border-gray-100 space-y-3">
+          <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-100 space-y-3">
             {/* Row 1: title + date range pills */}
-            <div className="flex items-center justify-between gap-3 flex-wrap">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
               <div>
                 <h2 className="text-sm font-black text-dark tracking-tight">All Submissions</h2>
                 <p className="text-gray-400 text-xs mt-0.5">
                   {filtered.length} of {submissions.length} {submissions.length === 1 ? "entry" : "entries"}
                 </p>
               </div>
-              <div className="flex items-center gap-1.5 flex-wrap">
+              <div className="flex items-center gap-1.5 overflow-x-auto [&::-webkit-scrollbar]:hidden pb-0.5">
                 {(["all", "today", "week", "month"] as DateRange[]).map((r) => (
                   <button
                     key={r}
                     onClick={() => setDateRange(r)}
-                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+                    className={`flex-shrink-0 px-3 py-1 rounded-full text-xs font-bold transition-all ${
                       dateRange === r
                         ? "bg-primary text-white shadow-sm"
                         : "bg-gray-100 text-gray-500 hover:bg-gray-200"
                     }`}
                   >
-                    {r === "all" ? "All Time" : r === "today" ? "Today" : r === "week" ? "This Week" : "This Month"}
+                    {r === "all" ? "All" : r === "today" ? "Today" : r === "week" ? "This Week" : "Month"}
                   </button>
                 ))}
               </div>
@@ -553,25 +554,25 @@ export default function DashboardView({
                 {filtered.map((sub, i) => (
                   <div
                     key={i}
-                    className="p-4 space-y-2.5 cursor-pointer hover:bg-gray-50/60 transition-colors"
+                    className="px-4 py-3 space-y-2 cursor-pointer hover:bg-gray-50/60 transition-colors"
                     onClick={() => setExpanded(expanded === i ? null : i)}
                   >
                     <div className="flex items-start justify-between gap-2">
-                      <div>
+                      <div className="min-w-0">
                         <div className="flex items-center gap-2">
-                          <span className="text-gray-300 text-xs font-medium">#{i + 1}</span>
-                          <p className="font-semibold text-dark text-sm">{sub.name || "—"}</p>
+                          <span className="text-gray-300 text-xs font-medium flex-shrink-0">#{i + 1}</span>
+                          <p className="font-semibold text-dark text-sm truncate">{sub.name || "—"}</p>
                         </div>
-                        <p className="text-gray-500 text-xs mt-0.5">{sub.email || "—"}</p>
+                        <p className="text-gray-500 text-xs mt-0.5 truncate">{sub.email || "—"}</p>
                       </div>
-                      <ServiceBadge service={sub.service} />
+                      <p className="text-[11px] text-gray-400 flex-shrink-0 mt-0.5">{fmtDate(sub.submittedAt)}</p>
                     </div>
+                    {sub.service && <ServiceBadge service={sub.service} />}
                     <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
                       {sub.phone && <span>{sub.phone}</span>}
                       {sub.company && <span>{sub.company}</span>}
                       {sub.city && <span>{sub.city}</span>}
                     </div>
-                    <p className="text-[11px] text-gray-400">{fmtDate(sub.submittedAt)}</p>
                     {expanded === i && (sub.participants || sub.message) && (
                       <div className="mt-2 pt-3 border-t border-gray-100 space-y-2">
                         {sub.participants && (

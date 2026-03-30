@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import QuoteModal from "@/app/components/ui/QuoteModal";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -26,6 +27,7 @@ const serviceLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [quoteOpen, setQuoteOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50">
@@ -156,12 +158,12 @@ export default function Header() {
                 Contact Us
               </Link>
 
-              <Link
-                href="/contact"
+              <button
+                onClick={() => setQuoteOpen(true)}
                 className="ml-2 px-5 py-2 text-sm font-semibold text-white bg-primary rounded-full hover:bg-red-700 transition-colors"
               >
                 Get Quote
-              </Link>
+              </button>
             </div>
 
             {/* Mobile hamburger */}
@@ -257,18 +259,19 @@ export default function Header() {
               </div>
 
               <div className="pt-2 pb-1">
-                <Link
-                  href="/contact"
+                <button
                   className="block w-full text-center px-5 py-2.5 text-sm font-semibold text-white bg-primary rounded-full hover:bg-red-700 transition-colors"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => { setMobileOpen(false); setQuoteOpen(true); }}
                 >
                   Get Quote
-                </Link>
+                </button>
               </div>
             </div>
           </div>
         )}
       </nav>
+
+      <QuoteModal open={quoteOpen} onClose={() => setQuoteOpen(false)} />
     </header>
   );
 }
