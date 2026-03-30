@@ -36,7 +36,7 @@ export default function Header() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between py-2 gap-1 sm:gap-0">
           <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
             <a
-              href="tel:012043-76696"
+              href="tel:+918527266399"
               className="flex items-center gap-1.5 hover:text-accent transition-colors"
             >
               <svg
@@ -47,10 +47,10 @@ export default function Header() {
               >
                 <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
               </svg>
-              <span>0120-43-76696</span>
+              <span>85272 66399</span>
             </a>
             <a
-              href="mailto:info@isdcouncil.com"
+              href="mailto:info@isdcouncil.co.in"
               className="flex items-center gap-1.5 hover:text-accent transition-colors"
             >
               <svg
@@ -61,7 +61,7 @@ export default function Header() {
               >
                 <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
               </svg>
-              <span>info@isdcouncil.com</span>
+              <span>info@isdcouncil.co.in</span>
             </a>
           </div>
           <div className="text-xs text-gray-300 font-medium tracking-wide">
@@ -73,15 +73,15 @@ export default function Header() {
       {/* Main navbar */}
       <nav className="bg-white shadow-md">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between py-1">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <Image
                 src="/isdc logo.png"
                 alt="ISDC Logo"
-                width={160}
-                height={50}
-                className="h-12 w-auto object-contain"
+                width={200}
+                height={64}
+                className="h-16 w-auto object-contain"
                 priority
               />
             </Link>

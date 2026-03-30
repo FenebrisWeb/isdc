@@ -45,13 +45,13 @@ export default function CTA() {
         <AnimateOnScroll animation="fadeUp" delay={320}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="tel:012043-76696"
+              href="tel:+918527266399"
               className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-white text-dark font-semibold rounded-full hover:bg-gray-100 transition-colors shadow-lg"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
               </svg>
-              Call Now: 0120-43-76696
+              Call Now: 85272 66399
             </a>
             <Link
               href="/contact"

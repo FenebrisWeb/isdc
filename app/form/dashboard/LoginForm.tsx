@@ -166,7 +166,7 @@ export default function LoginForm() {
         </div>
 
         <p className="text-center text-white/20 text-xs mt-6">
-          ISDC · Industrial Safety Development Council
+          ISDC · ISDC Services Division Pvt. Ltd.
         </p>
       </div>
     </div>

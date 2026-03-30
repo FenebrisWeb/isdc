@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: "How do I get started or enrol my team?",
-    a: "The process is simple: fill out an enquiry form on our website or call/WhatsApp us at +91-9555520299. Our team will schedule a consultation call to understand your requirements, after which we propose a customised training plan. Once agreed, your team completes the training and receives certification. You can also email us at info@isdcouncil.com.",
+    a: "The process is simple: fill out an enquiry form on our website or call/WhatsApp us at +91-9555520299. Our team will schedule a consultation call to understand your requirements, after which we propose a customised training plan. Once agreed, your team completes the training and receives certification. You can also email us at info@isdcouncil.co.in.",
   },
   {
     q: "Does ISDC provide post-training support?",
