@@ -16,7 +16,7 @@ export default function ClientWork() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ background: "#080C18" }}
+      style={{ background: "#101a2e" }}
     >
       {/* seamless top divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />

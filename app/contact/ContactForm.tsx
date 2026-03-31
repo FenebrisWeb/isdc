@@ -114,7 +114,7 @@ export default function ContactForm() {
       ══════════════════════════════════════════════════ */}
       <div
         className="relative lg:w-[42%] xl:w-[38%] flex-shrink-0 flex flex-col justify-between overflow-hidden"
-        style={{ background: "#080C18", minHeight: "clamp(400px, 100vh, 9999px)" }}
+        style={{ background: "#101a2e", minHeight: "clamp(400px, 100vh, 9999px)" }}
       >
         {/* decorative grid */}
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(135deg, rgba(255,255,255,0.013) 0px, rgba(255,255,255,0.013) 1px, transparent 1px, transparent 56px)" }} />

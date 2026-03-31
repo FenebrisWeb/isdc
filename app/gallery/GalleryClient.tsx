@@ -171,7 +171,7 @@ export default function GalleryClient() {
       {/* ═══════════════════════════════════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden py-16 lg:py-24" style={{ background: "#080C18" }}>
+      <section className="relative overflow-hidden py-16 lg:py-24" style={{ background: "#101a2e" }}>
 
         {/* Decorative grid */}
         <div
@@ -363,7 +363,7 @@ export default function GalleryClient() {
       {/* ═══════════════════════════════════════════════════════════════════════
           CTA
       ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden py-20 lg:py-28" style={{ background: "#080C18" }}>
+      <section className="relative overflow-hidden py-20 lg:py-28" style={{ background: "#101a2e" }}>
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(135deg, rgba(255,255,255,0.013) 0px, rgba(255,255,255,0.013) 1px, transparent 1px, transparent 56px)" }} />
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(700px circle at 50% 50%, rgba(204,33,40,0.10) 0%, transparent 60%)" }} />
         <div className="absolute top-8 left-8 w-8 h-8 border-t-2 border-l-2 border-primary/40 pointer-events-none" />

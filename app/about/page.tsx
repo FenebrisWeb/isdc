@@ -229,7 +229,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── OUR STORY / TIMELINE ── */}
-      <section className="py-20 lg:py-28 overflow-hidden" style={{ background: "#080C18" }}>
+      <section className="py-20 lg:py-28 overflow-hidden" style={{ background: "#101a2e" }}>
         {/* texture */}
         <div className="absolute inset-0 pointer-events-none"
           style={{ backgroundImage: "repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 56px)" }} />
@@ -262,7 +262,7 @@ export default function AboutPage() {
 
                       {/* year dotdesktop */}
                       <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                        <div className="w-4 h-4 rounded-full ring-4 ring-[#080C18]" style={{ background: item.color }} />
+                        <div className="w-4 h-4 rounded-full ring-4 ring-[#101a2e]" style={{ background: item.color }} />
                       </div>
 
                       {/* contentalternates left/right */}

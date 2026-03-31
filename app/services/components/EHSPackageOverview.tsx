@@ -239,7 +239,7 @@ export default function EHSPackageOverview() {
       </section>
 
       {/* ── SERVICES interactive list ── */}
-      <section className="py-20 lg:py-28 overflow-hidden" style={{ background: "#080C18" }}>
+      <section className="py-20 lg:py-28 overflow-hidden" style={{ background: "#101a2e" }}>
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(135deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 56px)" }} />
 
         <div className="relative max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">

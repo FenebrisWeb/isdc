@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
   return (
     <section
       className="relative pt-20 lg:pt-28 overflow-hidden"
-      style={{ background: "#080C18" }}
+      style={{ background: "#101a2e" }}
     >
       {/* diagonal texture */}
       <div className="absolute inset-0 pointer-events-none"
@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
                 <div className="flex items-center gap-3">
                   <div className="flex -space-x-2">
                     {(["#cc2128","#257e43","#fe5a0e","#1a1a2e"] as const).map((bg, i) => (
-                      <div key={i} className="w-8 h-8 rounded-full border-2 border-[#080C18] flex items-center justify-center text-[11px] font-black text-white" style={{ background: bg }}>
+                      <div key={i} className="w-8 h-8 rounded-full border-2 border-[#101a2e] flex items-center justify-center text-[11px] font-black text-white" style={{ background: bg }}>
                         {["R","S","A","M"][i]}
                       </div>
                     ))}

@@ -168,7 +168,7 @@ export default function QuoteModal({ open, onClose }: { open: boolean; onClose: 
         {/* ── LEFT PANEL (hidden on mobile) ── */}
         <div
           className="hidden lg:flex lg:w-[38%] xl:w-[34%] flex-shrink-0 flex-col justify-between relative overflow-hidden"
-          style={{ background: "#080C18" }}
+          style={{ background: "#101a2e" }}
         >
           {/* decorative grid */}
           <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(135deg, rgba(255,255,255,0.013) 0px, rgba(255,255,255,0.013) 1px, transparent 1px, transparent 56px)" }} />

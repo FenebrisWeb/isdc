@@ -174,13 +174,13 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(110deg, rgba(10,10,20,0.95) 30%, rgba(10,10,20,0.75) 60%, rgba(10,10,20,0.35) 100%)",
+            "linear-gradient(110deg, rgba(10,10,20,0.88) 30%, rgba(10,10,20,0.52) 60%, rgba(10,10,20,0.18) 100%)",
         }}
       />
       {/* Bottom vignette */}
       <div
         className="absolute inset-0"
-        style={{ background: "linear-gradient(to top, rgba(10,10,20,0.7) 0%, transparent 40%)" }}
+        style={{ background: "linear-gradient(to top, rgba(10,10,20,0.45) 0%, transparent 40%)" }}
       />
       {/* Mouse-reactive colour glow */}
       <div

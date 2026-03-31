@@ -60,7 +60,7 @@ export default function ServiceDetail({ data }: { data: ServiceDetailData }) {
       </section>
 
       {/* Course Modules + Side Panel */}
-      <section className="py-20 lg:py-28" style={{ background: "#080C18" }}>
+      <section className="py-20 lg:py-28" style={{ background: "#101a2e" }}>
         <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
           <AnimateOnScroll animation="fadeUp" className="mb-12">
             <div className="flex items-center gap-3 mb-4">

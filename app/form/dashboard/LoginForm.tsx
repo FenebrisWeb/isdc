@@ -37,7 +37,7 @@ export default function LoginForm() {
   return (
     <div
       className="min-h-screen flex items-center justify-center p-6 relative overflow-hidden"
-      style={{ background: "#080C18" }}
+      style={{ background: "#101a2e" }}
     >
       {/* decorative grid */}
       <div

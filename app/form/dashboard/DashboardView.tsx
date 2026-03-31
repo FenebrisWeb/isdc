@@ -249,7 +249,7 @@ export default function DashboardView({
     <div className="min-h-screen bg-gray-50">
 
       {/* ── Header ──────────────────────────────────────────────────────────── */}
-      <div style={{ background: "#080C18" }} className="border-b border-white/[0.07]">
+      <div style={{ background: "#101a2e" }} className="border-b border-white/[0.07]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-3">
 
           {/* Brand */}
