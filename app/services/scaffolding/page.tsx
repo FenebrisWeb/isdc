@@ -4,7 +4,32 @@ import CTA from "@/app/components/sections/CTA";
 
 export const metadata = {
   title: "Scaffolding Safety Training | ISDC",
-  description: "ISDC's Scaffolding Safety training covers safe erection, inspection, load calculation, and dismantling of scaffolding structures, fully compliant with IS codes and the Factories Act.",
+  description:
+    "ISDC's 2-3 day certified Scaffolding Safety training — safe erection, load calculation, inspection, tagging & dismantling. IS code & Factories Act compliant. Nationally recognised certificate.",
+  keywords: [
+    "scaffolding safety training India",
+    "scaffold erection training",
+    "scaffolding inspection course",
+    "IS code scaffolding",
+    "Factories Act scaffolding",
+    "scaffolding certification India",
+    "construction safety scaffolding",
+    "scaffold dismantling training",
+  ],
+  alternates: { canonical: "/services/scaffolding" },
+  openGraph: {
+    title: "Scaffolding Safety Training | ISDC",
+    description:
+      "2-3 day certified Scaffolding Safety training — safe erection, load calculation, inspection & dismantling. IS code & Factories Act compliant.",
+    url: "/services/scaffolding",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scaffolding Safety Training | ISDC",
+    description:
+      "2-3 day certified Scaffolding Safety training — safe erection, load calculation, inspection & dismantling.",
+  },
 };
 
 const data = {

@@ -4,7 +4,33 @@ import CTA from "@/app/components/sections/CTA";
 
 export const metadata = {
   title: "First Aid Training | ISDC",
-  description: "ISDC delivers certified First Aid training by WHO-certified doctors, covering BLS, wound care, fractures, burns, cardiac emergencies, and workplace accident response for all industries.",
+  description:
+    "ISDC's 1-2 day certified First Aid training delivered by WHO-certified doctors — CPR, AED, BLS, wound care, fractures, burns, cardiac emergencies & workplace accident response. Nationally recognised certificate.",
+  keywords: [
+    "first aid training India",
+    "CPR training certification",
+    "AED training",
+    "basic life support training",
+    "first aid certification WHO",
+    "workplace first aid training",
+    "emergency response training",
+    "first aid course Noida",
+    "corporate first aid training",
+  ],
+  alternates: { canonical: "/services/first-aid" },
+  openGraph: {
+    title: "First Aid Training | ISDC",
+    description:
+      "1-2 day certified First Aid training by WHO-certified doctors — CPR, AED, BLS, wound care & emergency response. Nationally recognised.",
+    url: "/services/first-aid",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "First Aid Training | ISDC",
+    description:
+      "1-2 day certified First Aid training by WHO-certified doctors — CPR, AED, BLS, wound care & emergency response.",
+  },
 };
 
 const data = {

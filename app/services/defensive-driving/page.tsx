@@ -4,7 +4,32 @@ import CTA from "@/app/components/sections/CTA";
 
 export const metadata = {
   title: "Defensive Driving & Road Safety Training | ISDC",
-  description: "ISDC's Defensive Driving training reduces motor vehicle accidents through classroom, visual, and multimedia training trusted by Fortune 100 corporations, SMEs, and NGOs across India.",
+  description:
+    "ISDC's 1-day certified Defensive Driving & Road Safety training — hazard perception, vehicle pre-inspection, night driving, fatigue management & accident prevention. Trusted by Fortune 100 companies.",
+  keywords: [
+    "defensive driving training India",
+    "road safety training corporate",
+    "fleet driver safety training",
+    "vehicle safety course India",
+    "accident prevention training",
+    "driver safety certification",
+    "road risk management training",
+    "fleet safety programme",
+  ],
+  alternates: { canonical: "/services/defensive-driving" },
+  openGraph: {
+    title: "Defensive Driving & Road Safety Training | ISDC",
+    description:
+      "1-day certified Defensive Driving training — hazard perception, fatigue management & accident prevention. Trusted by Fortune 100 companies.",
+    url: "/services/defensive-driving",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Defensive Driving & Road Safety Training | ISDC",
+    description:
+      "1-day certified Defensive Driving training — hazard perception, fatigue management & accident prevention. Trusted by Fortune 100 companies.",
+  },
 };
 
 const data = {

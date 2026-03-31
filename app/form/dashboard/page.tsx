@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import LoginForm from "./LoginForm";
 import DashboardView from "./DashboardView";
 import { FORMS } from "./forms";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 function parseCSV(text: string): string[][] {
   const rows: string[][] = [];

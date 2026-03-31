@@ -4,7 +4,33 @@ import CTA from "@/app/components/sections/CTA";
 
 export const metadata = {
   title: "Confined Space Entry & Rescue Training | ISDC",
-  description: "ISDC's Confined Space training covers atmospheric testing, permit-to-work, entrant and attendant roles, PPE selection, and emergency rescue, compliant with OISD and Factories Act.",
+  description:
+    "ISDC's 2-day certified Confined Space Entry & Rescue training — atmospheric hazard testing, permit-to-work, PPE, ventilation & tripod rescue simulation. OISD & Factories Act compliant.",
+  keywords: [
+    "confined space training India",
+    "confined space entry certification",
+    "permit-to-work training",
+    "atmospheric hazard testing",
+    "confined space rescue",
+    "OISD confined space",
+    "Factories Act confined space",
+    "multi-gas monitor training",
+    "oil gas safety training",
+  ],
+  alternates: { canonical: "/services/confined-space" },
+  openGraph: {
+    title: "Confined Space Entry & Rescue Training | ISDC",
+    description:
+      "2-day certified Confined Space training — atmospheric hazard testing, permit-to-work, PPE & tripod rescue simulation. OISD & Factories Act compliant.",
+    url: "/services/confined-space",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Confined Space Entry & Rescue Training | ISDC",
+    description:
+      "2-day certified Confined Space training — atmospheric hazard testing, permit-to-work, PPE & tripod rescue simulation.",
+  },
 };
 
 const data = {

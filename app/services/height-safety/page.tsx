@@ -4,7 +4,33 @@ import CTA from "@/app/components/sections/CTA";
 
 export const metadata = {
   title: "Tower Climbing & Work at Height Training | ISDC",
-  description: "ISDC's Work at Height training equips workers with certified skills in fall protection, harness use, tower climbing, and emergency rescue for construction, telecom, and power sectors.",
+  description:
+    "ISDC's 2-day certified Work at Height training — fall protection, harness fitting, tower climbing, anchor points & emergency rescue. DGFASLI compliant. Ideal for construction, telecom & power sectors.",
+  keywords: [
+    "work at height training India",
+    "tower climbing certification",
+    "fall protection training",
+    "harness training",
+    "height safety course",
+    "DGFASLI work at height",
+    "scaffold safety training",
+    "aerial rescue training",
+    "construction safety training",
+  ],
+  alternates: { canonical: "/services/height-safety" },
+  openGraph: {
+    title: "Tower Climbing & Work at Height Training | ISDC",
+    description:
+      "2-day certified Work at Height training — fall protection, harness fitting, tower climbing & emergency rescue. DGFASLI compliant.",
+    url: "/services/height-safety",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tower Climbing & Work at Height Training | ISDC",
+    description:
+      "2-day certified Work at Height training — fall protection, harness fitting, tower climbing & emergency rescue.",
+  },
 };
 
 const data = {

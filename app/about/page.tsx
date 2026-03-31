@@ -1,7 +1,36 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AnimateOnScroll from "@/app/components/ui/AnimateOnScroll";
 import CTA from "@/app/components/sections/CTA";
+
+export const metadata: Metadata = {
+  title: "About ISDC - India's Leading EHS Training Council",
+  description:
+    "Founded in 2008, ISDC is India's leading industrial safety training council. 80+ staff, 200+ clients, 150,000+ training sessions. ISO 9001, ISO 14001 & OHSAS 45001 certified. DGFASLI approved EHS training experts.",
+  keywords: [
+    "about ISDC",
+    "industrial safety development council",
+    "EHS training company India",
+    "safety training experts",
+    "ISO certified safety training",
+    "DGFASLI approved trainer",
+    "occupational safety India",
+  ],
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About ISDC - India's Leading EHS Training Council",
+    description:
+      "Founded in 2008 with 80+ staff and 200+ clients. India's premier EHS training council — ISO 9001, ISO 14001 & OHSAS 45001 certified.",
+    url: "/about",
+    type: "website",
+  },
+  twitter: {
+    title: "About ISDC - India's Leading EHS Training Council",
+    description:
+      "Founded in 2008 with 80+ staff and 200+ clients. India's premier EHS training council.",
+  },
+};
 
 /* ── Timeline milestones ── */
 const timeline = [

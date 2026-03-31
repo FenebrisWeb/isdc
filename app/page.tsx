@@ -1,5 +1,39 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Hero from "@/app/components/sections/Hero";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "ISDC - Industrial Safety Development Council | EHS Training & Services",
+  },
+  description:
+    "India's premier EHS training council. Certified fire safety, first aid, scaffolding, confined space, work at height & defensive driving courses. 15+ years, 200+ clients, ISO 9001 certified. DGFASLI approved.",
+  keywords: [
+    "EHS training India",
+    "industrial safety courses",
+    "fire safety certification",
+    "first aid training India",
+    "scaffolding safety",
+    "confined space entry",
+    "work at height training",
+    "defensive driving India",
+    "ISDC",
+    "safety training Noida",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "ISDC - Industrial Safety Development Council | EHS Training & Services",
+    description:
+      "India's premier EHS training council — certified fire safety, first aid, scaffolding, confined space & more. 15+ years, 200+ clients.",
+    url: "/",
+    type: "website",
+  },
+  twitter: {
+    title: "ISDC - Industrial Safety Development Council | EHS Training & Services",
+    description:
+      "India's premier EHS training council — certified fire safety, first aid, scaffolding, confined space & more. 15+ years, 200+ clients.",
+  },
+};
 import Stats from "@/app/components/sections/Stats";
 
 // Lazy-load everything below the fold

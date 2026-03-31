@@ -15,9 +15,57 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "ISDC - Industrial Safety Development Council | EHS Training & Services",
+  metadataBase: new URL("https://www.isdcouncil.co.in"),
+  title: {
+    default: "ISDC - Industrial Safety Development Council | EHS Training & Services",
+    template: "%s | ISDC",
+  },
   description:
-    "ISDC is India's premier industrial safety training council offering world-class EHS training, fire safety, first aid, scaffolding, confined space, and defensive driving courses. ISO 9001, ISO 14001, and OHSAS 45001 certified.",
+    "India's premier industrial safety training council offering certified EHS training — fire safety, first aid, scaffolding, confined space, work at height, and defensive driving. ISO 9001, ISO 14001 & OHSAS 45001 certified. Trusted by 200+ clients.",
+  keywords: [
+    "EHS training India",
+    "industrial safety training",
+    "fire safety training",
+    "first aid training",
+    "scaffolding safety training",
+    "confined space training",
+    "work at height training",
+    "defensive driving course",
+    "ISDC",
+    "Industrial Safety Development Council",
+    "safety council India",
+    "DGFASLI approved",
+    "ISO 9001 certified",
+    "EHS consulting",
+    "occupational health and safety",
+  ],
+  authors: [{ name: "ISDC - Industrial Safety Development Council", url: "https://www.isdcouncil.co.in" }],
+  creator: "ISDC",
+  publisher: "ISDC",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "ISDC - Industrial Safety Development Council",
+    title: "ISDC - Industrial Safety Development Council | EHS Training & Services",
+    description:
+      "India's premier industrial safety training council. Certified EHS training programmes for fire safety, first aid, scaffolding, confined space, work at height & defensive driving.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ISDC - Industrial Safety Development Council | EHS Training & Services",
+    description:
+      "India's premier industrial safety training council. Certified EHS training programmes — ISO 9001, ISO 14001 & OHSAS 45001.",
+  },
 };
 
 export default function RootLayout({

@@ -5,7 +5,33 @@ import CTA from "@/app/components/sections/CTA";
 
 export const metadata = {
   title: "Complete EHS Services & Package | ISDC",
-  description: "ISDC provides comprehensive Environment, Health & Safety services including training, outsourcing, compliance, and complete EHS packages for construction and industrial sites.",
+  description:
+    "ISDC's Complete EHS Services Package — end-to-end Environment, Health & Safety training, outsourcing, auditing & compliance for construction, mining, oil & gas, and industrial sites. ISO 9001 certified.",
+  keywords: [
+    "complete EHS services India",
+    "EHS outsourcing India",
+    "environment health safety package",
+    "EHS compliance India",
+    "industrial EHS services",
+    "safety management outsourcing",
+    "EHS audit India",
+    "construction EHS services",
+    "oil gas safety services",
+  ],
+  alternates: { canonical: "/complete-EHS-services-Package" },
+  openGraph: {
+    title: "Complete EHS Services & Package | ISDC",
+    description:
+      "End-to-end EHS training, outsourcing, auditing & compliance for construction, mining, oil & gas, and industrial sites. ISO 9001 certified.",
+    url: "/complete-EHS-services-Package",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Complete EHS Services & Package | ISDC",
+    description:
+      "End-to-end EHS training, outsourcing, auditing & compliance for industrial sites. ISO 9001 certified.",
+  },
 };
 
 export default function CompleteEHSServicesPage() {

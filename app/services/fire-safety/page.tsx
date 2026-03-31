@@ -4,7 +4,33 @@ import CTA from "@/app/components/sections/CTA";
 
 export const metadata = {
   title: "Fire Safety Training & Audit | ISDC",
-  description: "ISDC delivers Basic and Advanced certified fire safety training covering fire classification, extinguisher use, emergency evacuation, and systematic fire risk audits for all premises.",
+  description:
+    "ISDC delivers Basic (1-day) and Advanced (2-day) certified fire safety training — fire classification, extinguisher use, emergency evacuation, fire risk audit & DGFASLI-compliant drills. Nationally recognised certificate.",
+  keywords: [
+    "fire safety training India",
+    "fire safety certification",
+    "fire risk audit",
+    "DGFASLI fire safety",
+    "fire extinguisher training",
+    "emergency evacuation training",
+    "fire warden training",
+    "fire safety course Noida",
+    "advanced fire safety training",
+  ],
+  alternates: { canonical: "/services/fire-safety" },
+  openGraph: {
+    title: "Fire Safety Training & Audit | ISDC",
+    description:
+      "Basic & Advanced certified fire safety training — fire classification, extinguisher use, evacuation planning & fire risk audits. DGFASLI compliant.",
+    url: "/services/fire-safety",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fire Safety Training & Audit | ISDC",
+    description:
+      "Basic & Advanced certified fire safety training — fire classification, extinguisher use, evacuation planning & fire risk audits.",
+  },
 };
 
 const data = {
