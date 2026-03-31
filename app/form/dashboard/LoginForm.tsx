@@ -1,35 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
-export default function LoginForm() {
+export default function LoginForm({ onLogin }: { onLogin: (password: string) => void }) {
   const [password, setPassword] = useState("");
   const [showPwd, setShowPwd] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     setError("");
 
-    try {
-      const res = await fetch("/api/auth/dashboard", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password }),
-      });
-
-      if (res.ok) {
-        router.refresh();
-      } else {
-        setError("Incorrect password. Please try again.");
-        setLoading(false);
-      }
-    } catch {
-      setError("Connection error. Please try again.");
+    const expected = process.env.NEXT_PUBLIC_DASHBOARD_PASSWORD;
+    if (expected && password === expected) {
+      onLogin(password);
+    } else {
+      setError("Incorrect password. Please try again.");
       setLoading(false);
     }
   }

@@ -1,11 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
-interface FormOption { id: string; label: string; }
+interface FormOption { id: string; label: string; sheetId: string; gid: string; }
 
 interface Submission {
   submittedAt: string; name: string; email: string; phone: string;
@@ -43,6 +42,26 @@ const SERVICES = [
 ];
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
+
+function parseCSV(text: string): string[][] {
+  const rows: string[][] = [];
+  for (const line of text.split(/\r?\n/)) {
+    if (!line.trim()) continue;
+    const cells: string[] = [];
+    let cur = "", inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (ch === '"') {
+        if (inQ && line[i + 1] === '"') { cur += '"'; i++; }
+        else inQ = !inQ;
+      } else if (ch === "," && !inQ) { cells.push(cur); cur = ""; }
+      else cur += ch;
+    }
+    cells.push(cur);
+    rows.push(cells);
+  }
+  return rows;
+}
 
 function isWA(sub: Submission): boolean {
   return sub.name.startsWith("🟢") || sub.source === "WhatsApp Widget";
@@ -257,8 +276,7 @@ function DeleteConfirm({ name, onConfirm, onClose }: { name: string; onConfirm: 
 
 // ── Main component ─────────────────────────────────────────────────────────────
 
-export default function DashboardView({ forms, initialRows }: { forms: FormOption[]; initialRows: string[][] | null; }) {
-  const router = useRouter();
+export default function DashboardView({ forms, initialRows, onLogout }: { forms: FormOption[]; initialRows: string[][] | null; onLogout: () => void; }) {
 
   // ── Core state ───────────────────────────────────────────────────────────────
   const [selectedId, setSelectedId]       = useState(forms[0]?.id ?? "");
@@ -297,12 +315,16 @@ export default function DashboardView({ forms, initialRows }: { forms: FormOptio
   const fetchRows = useCallback(async (formId: string) => {
     setFetching(true); setFetchError(false); setExpanded(null);
     try {
-      const res = await fetch(`/api/sheets?formId=${encodeURIComponent(formId)}`);
+      const form = forms.find((f) => f.id === formId);
+      if (!form?.sheetId) throw new Error();
+      const url = `https://docs.google.com/spreadsheets/d/${form.sheetId}/export?format=csv&gid=${form.gid}`;
+      const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) throw new Error();
-      setRows((await res.json()).rows);
+      const csv = await res.text();
+      setRows(parseCSV(csv));
     } catch { setFetchError(true); }
     finally { setFetching(false); }
-  }, []);
+  }, [forms]);
 
   function handleFormChange(id: string) {
     setSelectedId(id);
@@ -379,10 +401,9 @@ export default function DashboardView({ forms, initialRows }: { forms: FormOptio
     else { setSortField(key); setSortDir(key === "submittedAt" ? "desc" : "asc"); }
   }
 
-  async function handleLogout() {
+  function handleLogout() {
     setLoggingOut(true);
-    await fetch("/api/auth/dashboard", { method: "DELETE" });
-    router.refresh();
+    onLogout();
   }
 
   function handleDownload() {
